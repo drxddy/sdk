@@ -111,10 +111,10 @@ testMultiply() {
   m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
   n = new Int32x4(2, 2, 2, 2);
   o = m * n;
-  Expect.equals(0xFFFFFFFE, o.x);
-  Expect.equals(0xFFFFFFFE, o.y);
-  Expect.equals(0xFFFFFFFE, o.z);
-  Expect.equals(0xFFFFFFFE, o.w);
+  Expect.equals(-2, o.x);
+  Expect.equals(-2, o.y);
+  Expect.equals(-2, o.z);
+  Expect.equals(-2, o.w);
 
   m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
   n = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
@@ -127,10 +127,10 @@ testMultiply() {
   m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
   n = new Int32x4(0x80000000, 0x80000000, 0x80000000, 0x80000000);
   o = m * n;
-  Expect.equals(0x80000000, o.x);
-  Expect.equals(0x80000000, o.y);
-  Expect.equals(0x80000000, o.z);
-  Expect.equals(0x80000000, o.w);
+  Expect.equals(-2147483648, o.x);
+  Expect.equals(-2147483648, o.y);
+  Expect.equals(-2147483648, o.z);
+  Expect.equals(-2147483648, o.w);
 }
 
 const int53 = 0x20000000000000; // 2^53.
