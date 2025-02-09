@@ -1655,6 +1655,16 @@ final class NativeInt32x4 implements Int32x4 {
     );
   }
 
+  Int32x4 operator *(Int32x4 other) {
+    // Avoid going through the typed array by "| 0" the result.
+    return NativeInt32x4._truncated(
+      JS("int", "(# * #) | 0", x, other.x),
+      JS("int", "(# * #) | 0", y, other.y),
+      JS("int", "(# * #) | 0", z, other.z),
+      JS("int", "(# * #) | 0", w, other.w),
+    );
+  }
+
   Int32x4 operator -() {
     // Avoid going through the typed array by "| 0" the result.
     return NativeInt32x4._truncated(

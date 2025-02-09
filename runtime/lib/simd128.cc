@@ -488,6 +488,16 @@ DEFINE_NATIVE_ENTRY(Int32x4_sub, 0, 2) {
   return Int32x4::New(_x, _y, _z, _w);
 }
 
+DEFINE_NATIVE_ENTRY(Int32x4_mul, 0, 2) {
+  GET_NON_NULL_NATIVE_ARGUMENT(Int32x4, self, arguments->NativeArgAt(0));
+  GET_NON_NULL_NATIVE_ARGUMENT(Int32x4, other, arguments->NativeArgAt(1));
+  int32_t _x = self.x() * other.x();
+  int32_t _y = self.y() * other.y();
+  int32_t _z = self.z() * other.z();
+  int32_t _w = self.w() * other.w();
+  return Int32x4::New(_x, _y, _z, _w);
+}
+
 DEFINE_NATIVE_ENTRY(Int32x4_getX, 0, 1) {
   GET_NON_NULL_NATIVE_ARGUMENT(Int32x4, self, arguments->NativeArgAt(0));
   int32_t value = self.x();

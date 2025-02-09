@@ -811,6 +811,14 @@ final class NaiveInt32x4 extends WasmTypedDataBase implements Int32x4 {
     return NaiveInt32x4._truncated(_x, _y, _z, _w);
   }
 
+  Int32x4 operator *(Int32x4 other) {
+    int _x = x * other.x;
+    int _y = y * other.y;
+    int _z = z * other.z;
+    int _w = w * other.w;
+    return NaiveInt32x4._truncated(_x, _y, _z, _w);
+  }
+
   Int32x4 operator -() {
     return NaiveInt32x4._truncated(-x, -y, -z, -w);
   }

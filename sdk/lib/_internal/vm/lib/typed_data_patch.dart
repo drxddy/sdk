@@ -4031,6 +4031,8 @@ final class _Int32x4 implements Int32x4 {
   external Int32x4 operator +(Int32x4 other);
   @pragma("vm:external-name", "Int32x4_sub")
   external Int32x4 operator -(Int32x4 other);
+  @pragma("vm:external-name", "Int32x4_mul")
+  external Int32x4 operator *(Int32x4 other);
   @pragma("vm:external-name", "Int32x4_getX")
   external int get x;
   @pragma("vm:external-name", "Int32x4_getY")

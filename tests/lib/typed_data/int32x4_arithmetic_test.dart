@@ -91,6 +91,48 @@ testSub() {
   Expect.equals(1, o.w);
 }
 
+testMultiply() {
+  var m = new Int32x4(0, 0, 0, 0);
+  var n = new Int32x4(1, 1, 1, 1);
+  var o = m * n;
+  Expect.equals(0, o.x);
+  Expect.equals(0, o.y);
+  Expect.equals(0, o.z);
+  Expect.equals(0, o.w);
+
+  m = new Int32x4(1, 2, 3, 4);
+  n = new Int32x4(5, 6, 7, 8);
+  o = m * n;
+  Expect.equals(5, o.x);
+  Expect.equals(12, o.y);
+  Expect.equals(21, o.z);
+  Expect.equals(32, o.w);
+
+  m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
+  n = new Int32x4(2, 2, 2, 2);
+  o = m * n;
+  Expect.equals(0xFFFFFFFE, o.x);
+  Expect.equals(0xFFFFFFFE, o.y);
+  Expect.equals(0xFFFFFFFE, o.z);
+  Expect.equals(0xFFFFFFFE, o.w);
+
+  m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
+  n = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
+  o = m * n;
+  Expect.equals(1, o.x);
+  Expect.equals(1, o.y);
+  Expect.equals(1, o.z);
+  Expect.equals(1, o.w);
+
+  m = new Int32x4(0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF, 0x7FFFFFFF);
+  n = new Int32x4(0x80000000, 0x80000000, 0x80000000, 0x80000000);
+  o = m * n;
+  Expect.equals(0x80000000, o.x);
+  Expect.equals(0x80000000, o.y);
+  Expect.equals(0x80000000, o.z);
+  Expect.equals(0x80000000, o.w);
+}
+
 const int53 = 0x20000000000000; // 2^53.
 final usingJavaScriptNumbers = (int53 + 1) == int53;
 
@@ -120,6 +162,7 @@ main() {
   for (int i = 0; i < 20; i++) {
     testAdd();
     testSub();
+    testMultiply();
     testTruncation();
   }
 }

@@ -3062,6 +3062,9 @@ abstract final class Int32x4 {
   /// Subtraction operator.
   Int32x4 operator -(Int32x4 other);
 
+  /// Multiplication operator.
+  Int32x4 operator *(Int32x4 other);
+
   /// Extract 32-bit mask from x lane.
   int get x;
 

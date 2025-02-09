@@ -226,6 +226,7 @@ namespace dart {
   V(Int32x4_xor, 2)                                                            \
   V(Int32x4_add, 2)                                                            \
   V(Int32x4_sub, 2)                                                            \
+  V(Int32x4_mul, 2)                                                            \
   V(Int32x4_getX, 1)                                                           \
   V(Int32x4_getY, 1)                                                           \
   V(Int32x4_getZ, 1)                                                           \
