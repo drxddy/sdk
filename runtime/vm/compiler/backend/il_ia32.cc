@@ -3915,6 +3915,7 @@ Condition DoubleTestOpInstr::EmitConditionCode(FlowGraphCompiler* compiler,
   SIMD_OP_FLOAT_ARITH(V, Max, max)                                             \
   V(Int32x4Add, addpl)                                                         \
   V(Int32x4Sub, subpl)                                                         \
+  V(Int32x4Mul, mulpl)                                                         \
   V(Int32x4BitAnd, andps)                                                      \
   V(Int32x4BitOr, orps)                                                        \
   V(Int32x4BitXor, xorps)                                                      \

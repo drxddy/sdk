@@ -10914,6 +10914,7 @@ class LoadThreadInstr : public TemplateDefinition<0, NoThrow, Pure> {
 #define SIMD_BINARY_INTEGER_OP_LIST(M, OP, T)                                  \
   SIMD_BINARY_OP(OP, T, Add)                                                   \
   SIMD_BINARY_OP(OP, T, Sub)                                                   \
+  SIMD_BINARY_OP(OP, T, Mul)                                                   \
   SIMD_BINARY_OP(OP, T, BitAnd)                                                \
   SIMD_BINARY_OP(OP, T, BitOr)                                                 \
   SIMD_BINARY_OP(OP, T, BitXor)

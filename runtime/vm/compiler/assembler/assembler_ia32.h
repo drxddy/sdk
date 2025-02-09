@@ -342,8 +342,10 @@ class Assembler : public AssemblerBase {
 
   void addpl(XmmRegister dst, XmmRegister src);
   void subpl(XmmRegister dst, XmmRegister src);
+  void mulpl(XmmRegister dst, XmmRegister src);
   void addps(XmmRegister dst, XmmRegister src);
   void subps(XmmRegister dst, XmmRegister src);
+  void mulps(XmmRegister dst, XmmRegister src);
   void divps(XmmRegister dst, XmmRegister src);
   void mulps(XmmRegister dst, XmmRegister src);
   void minps(XmmRegister dst, XmmRegister src);

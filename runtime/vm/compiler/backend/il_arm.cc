@@ -5144,6 +5144,7 @@ DEFINE_EMIT(Int32x4WithFlag,
   CASE(Int32x4BitXor)                                                          \
   CASE(Int32x4Add)                                                             \
   CASE(Int32x4Sub)                                                             \
+  CASE(Int32x4Mul)                                                             \
   ____(Simd32x4BinaryOp)                                                       \
   CASE(Float64x2Add)                                                           \
   CASE(Float64x2Sub)                                                           \

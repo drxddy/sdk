@@ -8337,6 +8337,8 @@ SimdOpInstr::Kind SimdOpInstr::KindForOperator(intptr_t cid, Token::Kind op) {
           return kInt32x4Add;
         case Token::kSUB:
           return kInt32x4Sub;
+        case Token::kMUL:
+          return kInt32x4Mul;
         case Token::kBIT_AND:
           return kInt32x4BitAnd;
         case Token::kBIT_OR:

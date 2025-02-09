@@ -536,6 +536,14 @@ void Assembler::subpl(XmmRegister dst, XmmRegister src) {
   EmitXmmRegisterOperand(dst, src);
 }
 
+void Assembler::mulpl(XmmRegister dst, XmmRegister src) {
+  AssemblerBuffer::EnsureCapacity ensured(&buffer_);
+  EmitUint8(0x66);
+  EmitUint8(0x0F);
+  EmitUint8(0xF4);
+  EmitXmmRegisterOperand(dst, src);
+}
+
 void Assembler::addps(XmmRegister dst, XmmRegister src) {
   AssemblerBuffer::EnsureCapacity ensured(&buffer_);
   EmitUint8(0x0F);
@@ -547,6 +555,13 @@ void Assembler::subps(XmmRegister dst, XmmRegister src) {
   AssemblerBuffer::EnsureCapacity ensured(&buffer_);
   EmitUint8(0x0F);
   EmitUint8(0x5C);
+  EmitXmmRegisterOperand(dst, src);
+}
+
+void Assembler::mulps(XmmRegister dst, XmmRegister src) {
+  AssemblerBuffer::EnsureCapacity ensured(&buffer_);
+  EmitUint8(0x0F);
+  EmitUint8(0x59);
   EmitXmmRegisterOperand(dst, src);
 }
 
